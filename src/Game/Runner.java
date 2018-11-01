@@ -1,7 +1,6 @@
 package Game;
 
 import People.Person;
-import Rooms.LunchRoom;
 import Rooms.Room;
 import Rooms.WinningRoom;
 
@@ -22,18 +21,28 @@ public class Runner
 				building[x][y] = new Room(x,y);
 			}
 		}
-		//Create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x,y);
-		//Create a lunch room.
+		//Create three random legendary item rooms
 		int a = (int)(Math.random()*building.length);
-		while (a == x)
+		while (a == 0)
 			a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		while (b == y)
+		while (b == 0)
 			b = (int)(Math.random()*building.length);
-		building[x][y] = new LunchRoom(a,b);
+		building[a][b] = new WinningRoom(a,b);
+		int c = (int)(Math.random()*building.length);
+		while (c == a)
+			c = (int)(Math.random()*building.length);
+		int d = (int)(Math.random()*building.length);
+		while (d == b)
+			d = (int)(Math.random()*building.length);
+		building[c][d] = new WinningRoom(c,d);
+		int e = (int)(Math.random()*building.length);
+		while (e == a || e == c)
+			e = (int)(Math.random()*building.length);
+		int f = (int)(Math.random()*building.length);
+		while (f == b || f == d)
+			f = (int)(Math.random()*building.length);
+		building[e][f] = new WinningRoom(e,f);
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);

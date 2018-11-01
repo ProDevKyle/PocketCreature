@@ -6,6 +6,9 @@ public class Room
 {
 	Person occupant;
 	int xLoc,yLoc;
+	String[] stuff = {"sword", "shield", "health potion"};
+	int act;
+
 	public Room(int x, int y)
 	{
 		xLoc = x;
@@ -18,6 +21,9 @@ public class Room
 	public void enterRoom(Person x)
 	{
 		System.out.println("You enter a plain old room.");
+		System.out.println("You have " + x.getHealth() + " health " + x.getDamage() + " damage " + x.getProtection() + " shield.");
+		act = (int)(Math.random()*stuff.length);
+		System.out.println("There is a " + stuff[act] + "\n" + "What would you like to do?");
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);

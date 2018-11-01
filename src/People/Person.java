@@ -8,6 +8,10 @@ public class Person
 	String firstName;
 	String familyName;
 	int xLoc, yLoc;
+	int health = 3;
+	int damage = 1;
+	int protection = 0;
+
 	public int getxLoc()
 	{
 		return xLoc;
@@ -19,6 +23,18 @@ public class Person
 	public int getyLoc()
 	{
 		return yLoc;
+	}
+	public int getHealth()
+	{
+		return health;
+	}
+	public int getDamage()
+	{
+		return damage;
+	}
+	public int getProtection()
+	{
+		return protection;
 	}
 	public void setyLoc(int yLoc)
 	{
