@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class Runner
 {
-	private static boolean gameOn = true;
-	
+	private static boolean gameOn = false;
+
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[5][5];
@@ -61,6 +61,7 @@ public class Runner
 			}
 		}
 		in.close();
+		Runner.gameOff();
 	}
 	/**
 	 * Checks that the movement chosen is within the valid game map.
@@ -72,7 +73,8 @@ public class Runner
 	public static boolean validMove(String move, Person p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
-		switch (move) {
+		switch (move)
+		{
 			case "n":
 				if (p.getxLoc() > 0)
 				{
@@ -121,6 +123,10 @@ public class Runner
 				break;
 		}
 		return true;
+	}
+	public static void gameOn()
+	{
+		gameOn = true;
 	}
 	public static void gameOff()
 	{

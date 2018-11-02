@@ -39,7 +39,7 @@ public class WinningRoom extends Room
 			else
 				System.out.println("You entered this legendary item room already. Go find the other legendary item(s).");
 		}
-		if(total == 1)
+		else if(total == 1)
 		{
 			if(itemLocx1 != x.getxLoc() && itemLocy1 != x.getyLoc())
 			{
@@ -51,7 +51,7 @@ public class WinningRoom extends Room
 			else
 				System.out.println("You entered this legendary item room already. Go find the other legendary item(s).");
 		}
-		if(total == 2)
+		else if(total == 2)
 		{
 			if(itemLocx1 != x.getxLoc() && itemLocy1 != x.getyLoc() && itemLocx2 != x.getxLoc() && itemLocy2 != x.getyLoc())
 			{
@@ -59,7 +59,7 @@ public class WinningRoom extends Room
 				itemLocy3 = x.getyLoc();
 				total++;
 				System.out.println("You found all 3 legendary item! Congrats!");
-				Runner.gameOff();
+				System.exit(1);
 			}
 			else
 				System.out.println("You entered this legendary item room already. Go find the other legendary item(s).");

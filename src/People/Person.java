@@ -10,7 +10,7 @@ public class Person
 	int xLoc, yLoc;
 	int health = 3;
 	int damage = 1;
-	int protection = 0;
+	int zombie = 1;
 
 	public int getxLoc()
 	{
@@ -28,13 +28,33 @@ public class Person
 	{
 		return health;
 	}
+	public int gainHealth()
+	{
+		health = health + 1;
+		return health;
+	}
+	public int loseHealth()
+	{
+		health = health - 1;
+		return health;
+	}
 	public int getDamage()
 	{
 		return damage;
 	}
-	public int getProtection()
+	public int gainDamage()
 	{
-		return protection;
+		damage = damage + 1;
+		return damage;
+	}
+	public int loseDamage()
+	{
+		damage = damage - 1;
+		return damage;
+	}
+	public int getZombie()
+	{
+		return zombie;
 	}
 	public void setyLoc(int yLoc)
 	{
