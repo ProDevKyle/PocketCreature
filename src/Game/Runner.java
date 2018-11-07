@@ -60,7 +60,7 @@ public class Runner
 			}
 			System.out.println();
 		}
-		System.out.println("* is you on the board.");
+		System.out.println("* is your position on the board.");
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
