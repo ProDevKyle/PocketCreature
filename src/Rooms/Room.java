@@ -17,7 +17,6 @@ public class Room
 		xLoc = x;
 		yLoc = y;
 	}
-
 	/**
 	 * Method controls the results when a person enters this room.
 	 *
@@ -29,11 +28,11 @@ public class Room
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		System.out.println("Player Status: " + x.getHealth() + " health " + x.getDamage() + " damage");
-		act = (int) (Math.random() * stuff.length);
+		act = (int)(Math.random() * stuff.length);
 		if (stuff[act].equals("poison"))
 		{
 			x.loseHealth();
-			if (x.getHealth() == 0)
+			if(x.getHealth() == 0)
 			{
 				System.out.println("You lose.");
 				System.exit(1);
@@ -41,51 +40,59 @@ public class Room
 			else
 				System.out.println("There is a " + stuff[act] + " pool." + "\n" + "You have been poisoned. You have " + x.getHealth() + " health.");
 		}
-		else if (stuff[act].equals("drain"))
+		else if(stuff[act].equals("drain"))
 			System.out.println("There is a " + stuff[act] + " pool." + "\n" + "You have been drained. You have " + x.loseDamage() + " damage.");
 		else
 		{
 			Scanner user = new Scanner(System.in);
-			if (stuff[act].equals("zombie"))
+			if(stuff[act].equals("zombie"))
 				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to attack?");
-			else if (stuff[act].equals("sword"))
+			else if(stuff[act].equals("sword"))
 				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to use the " + stuff[act] + "?");
-			else if (stuff[act].equals("potion"))
+			else if(stuff[act].equals("potion"))
 				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to use the " + stuff[act] + "?");
 			String choice = user.nextLine();
-			if (choice.equals("yes"))
+			if(choice.equals("yes"))
 			{
-				if (stuff[act].equals("zombie"))
+				if(stuff[act].equals("zombie"))
 				{
-					if (x.getDamage() <= 0)
+					if(x.getDamage() <= 0)
 					{
-						if (x.getHealth() == 0)
+						x.loseHealth();
+						if(x.getHealth() == 0)
 						{
 							System.out.println("You lose.");
 							System.exit(1);
 						}
-						else
-							System.out.println("You lost one health. Now you have " + x.loseHealth() + " health.");
+						if(x.getDamage() <= 0)
+							System.out.println("You lost one health. Now you have " + x.getHealth() + " health.");
 					}
 					else
 						System.out.println("You killed a " + stuff[act] + ".");
 				}
-				else if (stuff[act].equals("sword"))
-					System.out.println("You received a boost. Now you have " + x.gainDamage() + " damage.");
+				else if(stuff[act].equals("sword"))
+				{
+					x.gainDamage();
+					System.out.println("You received a boost. Now you have " + x.getDamage() + " damage.");
+				}
 				else if (stuff[act].equals("potion"))
-					System.out.println("You received a boost. Now you have " + x.gainHealth() + " health.");
+				{
+					x.gainHealth();
+					System.out.println("You received a boost. Now you have " + x.getHealth() + " health.");
+				}
 			}
 			else
 			{
-				if (stuff[act].equals("zombie"))
+				if(stuff[act].equals("zombie"))
 				{
-					if (x.getHealth() == 0)
+					x.loseHealth();
+					if(x.getHealth() == 0)
 					{
 						System.out.println("You lose.");
 						System.exit(1);
 					}
 					else
-						System.out.println("You lost one health. Now you have " + x.loseHealth() + " health.");
+						System.out.println("You lost one health. Now you have " + x.getHealth() + " health.");
 				}
 			}
 		}

@@ -10,7 +10,6 @@ public class Person
 	int xLoc, yLoc;
 	int health = 3;
 	int damage = 1;
-	int zombie = 1;
 
 	public int getxLoc()
 	{
@@ -52,15 +51,11 @@ public class Person
 		damage = damage - 1;
 		return damage;
 	}
-	public int getZombie()
-	{
-		return zombie;
-	}
 	public void setyLoc(int yLoc)
 	{
 		this.yLoc = yLoc;
 	}
-	public Person (String firstName, String familyName, int xLoc, int yLoc)
+	public Person(String firstName, String familyName, int xLoc, int yLoc)
 	{
 		this.firstName = firstName;
 		this.familyName = familyName;
