@@ -34,6 +34,7 @@ public class Room
 			x.loseHealth();
 			if(x.getHealth() == 0)
 			{
+				System.out.println("There is a " + stuff[act] + " pool." + "\n" + "You have been poisoned. You have " + x.getHealth() + " health.");
 				System.out.println("You lose.");
 				System.exit(1);
 			}
@@ -61,6 +62,7 @@ public class Room
 						x.loseHealth();
 						if(x.getHealth() == 0)
 						{
+							System.out.println("You lost one health. Now you have " + x.getHealth() + " health.");
 							System.out.println("You lose.");
 							System.exit(1);
 						}
