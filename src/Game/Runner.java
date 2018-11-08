@@ -52,7 +52,6 @@ public class Runner
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new Room(x,y);
 				if(x == 0 && y == 0)
 					System.out.print("[*]");
 				else
@@ -72,7 +71,6 @@ public class Runner
 				{
 					for (int y = 0; y < building[x].length; y++)
 					{
-						building[x][y] = new Room(x,y);
 						if(x == player1.getxLoc() && y == player1.getyLoc())
 							System.out.print("[*]");
 						else
