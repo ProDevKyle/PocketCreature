@@ -47,11 +47,11 @@ public class Room
 		{
 			Scanner user = new Scanner(System.in);
 			if(stuff[act].equals("zombie"))
-				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to attack?");
+				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to attack?(yes or no)");
 			else if(stuff[act].equals("sword"))
-				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to use the " + stuff[act] + "?");
+				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to use the " + stuff[act] + "? (yes or no)");
 			else if(stuff[act].equals("potion"))
-				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to use the " + stuff[act] + "?");
+				System.out.println("There is a " + stuff[act] + "." + "\n" + "Would you like to use the " + stuff[act] + "? (yes or no)");
 			String choice = user.nextLine();
 			if(choice.equals("yes"))
 			{
