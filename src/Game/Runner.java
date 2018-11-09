@@ -14,7 +14,7 @@ public class Runner
 	{
 		System.out.println("YOUR GOAL IS TO FIND ALL 3 LEGENDARY ITEMS! GO NOW! SAVE THE WORLD!");
 		//Fill the building with normal rooms
-		Board building = new Board(4,4);
+		Board building = new Board(5,5);
 		for (int x = 0; x < building.board.length; x++)
 		{
 			for (int y = 0; y < building.board[x].length; y++)
