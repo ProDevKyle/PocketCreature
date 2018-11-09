@@ -9,7 +9,7 @@ public class Room
 {
 	Person occupant;
 	int xLoc, yLoc;
-	String[] stuff = {"zombie", "poison", "drain", "zombie", "sword", "potion", "zombie", "drain", "poison", "zombie"};
+	String[] stuff = {"zombie", "poison", "drain", "sword", "zombie", "potion", "drain", "poison", "zombie"};
 	int act;
 
 	public Room(int x, int y)
